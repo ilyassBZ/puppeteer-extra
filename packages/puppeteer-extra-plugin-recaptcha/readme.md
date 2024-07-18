@@ -27,6 +27,8 @@ npm install puppeteer puppeteer-extra puppeteer-extra-plugin-recaptcha
 
 > 🎁 **Note:** Until we've automated changelog updates in markdown files please follow the `#announcements` channel in our [discord server](https://extra.community/) for the latest updates and changelog info.
 
+- Support capMonster (<https://capmonster.cloud/en/>)
+
 _Older changelog:_
 
 ##### `3.1.9`
@@ -72,8 +74,8 @@ const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
 puppeteer.use(
   RecaptchaPlugin({
     provider: {
-      id: '2captcha',
-      token: 'XXXXXXX' // REPLACE THIS WITH YOUR OWN 2CAPTCHA API KEY ⚡
+      id: 'XXXXXXX', // REPLACE THIS WITH YOUR OWN PROVIDER  2CAPTCHA/CAPMONSTER ⚡
+      token: 'XXXXXXX' // REPLACE THIS WITH YOUR OWN 2CAPTCHA/CAPMONSTER API KEY ⚡
     },
     visualFeedback: true // colorize reCAPTCHAs (violet = detected, green = solved)
   })
@@ -109,8 +111,8 @@ import RecaptchaPlugin from 'puppeteer-extra-plugin-recaptcha'
 puppeteer.use(
   RecaptchaPlugin({
     provider: {
-      id: '2captcha',
-      token: 'ENTER_YOUR_2CAPTCHA_API_KEY_HERE'
+      id: '2captcha', // or 'capmonster'
+      token: 'ENTER_YOUR_2CAPTCHA_API_KEY_HERE' // or API key for capmonster
     }
   })
 )
@@ -157,6 +159,14 @@ In any case I strongly feel that captchas in their current form have failed. The
 I thought about having the plugin solve captchas directly (e.g. using the [audio challenge](https://github.com/dessant/buster) and speech-to-text APIs), but external solution providers are so cheap and reliable that there is really no benefit in doing that. ¯\\\_(ツ)\_/¯
 
 _Please note:_ You need a provider configured for this plugin to do it's magic. If you decide to use the built-in 2captcha provider you need to add funds to your 2captcha account.
+
+### capmonster
+
+CapMonster Cloud is a cloud-based service that automates the solving of CAPTCHA challenges. It provides developers with an API for integrating CAPTCHA solving into applications, ensuring reliable and efficient bypassing of CAPTCHAs used on websites. The service emphasizes scalability, accuracy, and security, making it suitable for automating interactions with CAPTCHA-protected sites.
+
+- Cost: 1000 reCAPTCHAs v2 for 0.6 USD
+- Cost: 1000 reCAPTCHAs v3 for 0.9 USD
+- Cost: 1000 hCaptcha for 0.8 USD
 
 ### 2captcha
 
